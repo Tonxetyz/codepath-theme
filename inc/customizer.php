@@ -13,6 +13,14 @@ function codepath_defaults() {
 		'hero_text'        => 'CodePath AI — персональный путь в код. ИИ-наставник Отто подсказывает и объясняет, но не делает работу за тебя.',
 		'hero_button_text' => 'Начать учиться',
 		'hero_button_url'  => '#benefits',
+
+		'benefits_title'    => 'Почему CodePath AI',
+		'benefit_1_title'   => 'Наставник, который учит',
+		'benefit_1_text'    => 'Отто даёт подсказки и разбирает ошибки, но не пишет решение за тебя. Ты действительно учишься.',
+		'benefit_2_title'   => 'Код прямо в браузере',
+		'benefit_2_text'    => 'Python запускается на странице: ничего не нужно устанавливать, начать можно за минуту.',
+		'benefit_3_title'   => 'Честный прогресс',
+		'benefit_3_text'    => 'Считаем только реальное время практики, поэтому ты видишь настоящий рост, а не цифры для галочки.',
 	);
 }
 
@@ -53,4 +61,11 @@ add_action( 'customize_register', function ( $wp_customize ) {
 		'hero_button_text' => array( 'Текст кнопки', 'text' ),
 		'hero_button_url'  => array( 'Ссылка кнопки', 'url' ),
 	) );
+
+	$benefits = array( 'benefits_title' => array( 'Заголовок блока', 'text' ) );
+	for ( $i = 1; $i <= 3; $i++ ) {
+		$benefits[ "benefit_{$i}_title" ] = array( "Карточка $i: заголовок", 'text' );
+		$benefits[ "benefit_{$i}_text" ]  = array( "Карточка $i: текст", 'textarea' );
+	}
+	codepath_add_section( $wp_customize, 'codepath_benefits', 'Преимущества', 31, $benefits );
 } );
