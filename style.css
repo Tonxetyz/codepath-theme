@@ -118,3 +118,31 @@ p { margin: 0 0 1em; }
 	.site-nav a { display: block; padding: 12px 0; }
 	.site-header__inner { flex-wrap: wrap; }
 }
+
+/* ---------- Главный экран ---------- */
+.hero {
+	background:
+		radial-gradient(circle at 80% 30%, rgba(139, 92, 246, .35), transparent 55%),
+		linear-gradient(160deg, var(--dark), var(--dark-2));
+	color: #fff;
+	padding: 56px 0 72px;
+	overflow: hidden;
+}
+.hero__inner { display: grid; gap: 32px; align-items: center; }
+.hero h1 { font-size: clamp(2rem, 6vw, 3.5rem); letter-spacing: -.02em; }
+.hero__text { font-size: 1.15rem; color: #cbd5e1; max-width: 34em; margin-bottom: 28px; }
+.hero .btn { background: #fff; color: var(--accent-hover); }
+.hero .btn:hover { background: #ede9fe; }
+.hero__art { justify-self: center; width: min(70%, 320px); animation: otto-float 5s ease-in-out infinite; }
+.hero__art img { display: block; width: 100%; }
+
+@keyframes otto-float { 50% { transform: translateY(-12px); } }
+
+@media (min-width: 768px) {
+	.hero { padding: 96px 0 112px; }
+	.hero__inner { grid-template-columns: 1.1fr .9fr; }
+	.hero__art { width: 100%; max-width: 420px; }
+}
+@media (prefers-reduced-motion: reduce) {
+	.hero__art { animation: none; }
+}
