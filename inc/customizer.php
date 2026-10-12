@@ -33,6 +33,10 @@ function codepath_defaults() {
 		'review_3_name'     => 'Елена',
 		'review_3_role'     => 'родитель',
 		'review_3_text'     => 'Нравится, что считаются реальные часы. Видно, сколько сын правда занимался, без накруток.',
+
+		'footer_text'       => 'Учись программировать спокойно и честно. Отто всегда рядом.',
+		'cookie_text'       => 'Сайт использует cookie, чтобы работать корректно. Продолжая им пользоваться, вы соглашаетесь с этим.',
+		'seo_keywords'      => 'обучение программированию, Python, ИИ-наставник, CodePath AI',
 	);
 }
 
@@ -88,4 +92,10 @@ add_action( 'customize_register', function ( $wp_customize ) {
 		$reviews[ "review_{$i}_text" ] = array( "Отзыв $i: текст", 'textarea' );
 	}
 	codepath_add_section( $wp_customize, 'codepath_reviews', 'Отзывы', 32, $reviews );
+
+	codepath_add_section( $wp_customize, 'codepath_footer', 'Подвал, cookie и SEO', 33, array(
+		'footer_text'  => array( 'Текст в подвале', 'textarea' ),
+		'cookie_text'  => array( 'Текст баннера cookie', 'textarea' ),
+		'seo_keywords' => array( 'Ключевые слова (через запятую)', 'text' ),
+	) );
 } );
