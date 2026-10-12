@@ -166,3 +166,22 @@ p { margin: 0 0 1em; }
 @media (min-width: 768px) {
 	.cards { grid-template-columns: repeat(3, 1fr); }
 }
+
+/* ---------- Отзывы ---------- */
+.reviews { background: var(--bg-soft); }
+.review-list { display: grid; gap: 20px; }
+.review {
+	margin: 0; padding: 28px;
+	background: #fff; border-radius: var(--radius); border: 1px solid #ddd6fe;
+	display: flex; flex-direction: column; justify-content: space-between; gap: 20px;
+}
+.review blockquote { margin: 0; }
+.review blockquote p { margin: 0; font-size: 1.05rem; }
+.review blockquote p::before { content: "«"; }
+.review blockquote p::after { content: "»"; }
+.review figcaption strong { display: block; }
+.review figcaption span { color: var(--ink-soft); font-size: .9rem; }
+
+@media (min-width: 768px) {
+	.review-list { grid-template-columns: repeat(3, 1fr); }
+}
