@@ -85,3 +85,36 @@ p { margin: 0 0 1em; }
 	html { scroll-behavior: auto; }
 	* { transition: none !important; }
 }
+
+/* ---------- Шапка ---------- */
+.site-header { position: sticky; top: 0; z-index: 50; background: var(--dark); }
+.site-header__inner { display: flex; align-items: center; justify-content: space-between; min-height: 64px; }
+
+.logo, .custom-logo-link {
+	color: #fff; font-weight: 800; font-size: 1.25rem; text-decoration: none; letter-spacing: -.01em;
+}
+.custom-logo { max-height: 40px; width: auto; display: block; }
+
+.site-nav .menu { display: flex; gap: 28px; list-style: none; margin: 0; padding: 0; }
+.site-nav a { color: #e2e8f0; text-decoration: none; font-weight: 600; padding: 8px 0; display: inline-block; }
+.site-nav a:hover { color: #fff; text-decoration: underline; text-underline-offset: 6px; }
+
+.nav-toggle { display: none; width: 44px; height: 44px; background: none; border: 0; cursor: pointer; position: relative; }
+.nav-toggle__bar, .nav-toggle__bar::before, .nav-toggle__bar::after {
+	position: absolute; left: 10px; width: 24px; height: 3px; border-radius: 2px; background: #fff; content: "";
+}
+.nav-toggle__bar { top: 20px; }
+.nav-toggle__bar::before { left: 0; top: -8px; }
+.nav-toggle__bar::after { left: 0; top: 8px; }
+
+@media (max-width: 767px) {
+	.js .nav-toggle { display: block; }
+	.js .site-nav {
+		display: none; position: absolute; left: 0; right: 0; top: 100%;
+		background: var(--dark); border-top: 1px solid #334155; padding: 8px 16px 16px;
+	}
+	.js .site-nav.is-open { display: block; }
+	.site-nav .menu { flex-direction: column; gap: 0; }
+	.site-nav a { display: block; padding: 12px 0; }
+	.site-header__inner { flex-wrap: wrap; }
+}
