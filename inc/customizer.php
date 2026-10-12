@@ -21,6 +21,18 @@ function codepath_defaults() {
 		'benefit_2_text'    => 'Python запускается на странице: ничего не нужно устанавливать, начать можно за минуту.',
 		'benefit_3_title'   => 'Честный прогресс',
 		'benefit_3_text'    => 'Считаем только реальное время практики, поэтому ты видишь настоящий рост, а не цифры для галочки.',
+
+		// Примеры отзывов — замените настоящими в Настройщике.
+		'reviews_title'     => 'Что говорят ученики',
+		'review_1_name'     => 'Мария',
+		'review_1_role'     => '10 класс',
+		'review_1_text'     => 'Раньше боялась программирования. Отто объясняет ошибки так, что наконец стало понятно, а не страшно.',
+		'review_2_name'     => 'Артём',
+		'review_2_role'     => 'начинает с нуля',
+		'review_2_text'     => 'Не нужно ничего ставить: открыл страницу и сразу пишу код. За неделю дошёл до первых циклов.',
+		'review_3_name'     => 'Елена',
+		'review_3_role'     => 'родитель',
+		'review_3_text'     => 'Нравится, что считаются реальные часы. Видно, сколько сын правда занимался, без накруток.',
 	);
 }
 
@@ -68,4 +80,12 @@ add_action( 'customize_register', function ( $wp_customize ) {
 		$benefits[ "benefit_{$i}_text" ]  = array( "Карточка $i: текст", 'textarea' );
 	}
 	codepath_add_section( $wp_customize, 'codepath_benefits', 'Преимущества', 31, $benefits );
+
+	$reviews = array( 'reviews_title' => array( 'Заголовок блока', 'text' ) );
+	for ( $i = 1; $i <= 3; $i++ ) {
+		$reviews[ "review_{$i}_name" ] = array( "Отзыв $i: имя", 'text' );
+		$reviews[ "review_{$i}_role" ] = array( "Отзыв $i: кто это (класс, роль)", 'text' );
+		$reviews[ "review_{$i}_text" ] = array( "Отзыв $i: текст", 'textarea' );
+	}
+	codepath_add_section( $wp_customize, 'codepath_reviews', 'Отзывы', 32, $reviews );
 } );
