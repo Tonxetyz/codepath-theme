@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400">
+	<!-- Заглушка: Отто. Замените файл своим рисунком (можно PNG/WebP, поменяйте имя в template-parts/hero.php). -->
+	<g fill="none" stroke-linecap="round" stroke-width="34">
+		<path stroke="#6d28d9" d="M125 240C65 262 50 320 90 352M275 240C335 262 350 320 310 352"/>
+		<path stroke="#7c3aed" d="M155 255C115 300 122 350 162 366M245 255C285 300 278 350 238 366"/>
+		<path stroke="#8b5cf6" d="M182 262C168 322 188 356 214 362M218 262C232 322 212 356 186 366"/>
+	</g>
+	<ellipse cx="200" cy="165" rx="118" ry="108" fill="#8b5cf6"/>
+	<ellipse cx="160" cy="105" rx="46" ry="22" fill="#a78bfa" opacity=".6" transform="rotate(-20 160 105)"/>
+	<g fill="none" stroke="#ede9fe" stroke-width="9" stroke-linecap="round" stroke-linejoin="round">
+		<path d="M172 82l-20 16 20 16M228 82l20 16-20 16M206 76l-12 44"/>
+	</g>
+	<circle cx="158" cy="172" r="28" fill="#fff"/><circle cx="242" cy="172" r="28" fill="#fff"/>
+	<circle cx="164" cy="176" r="13" fill="#0f172a"/><circle cx="236" cy="176" r="13" fill="#0f172a"/>
+	<circle cx="169" cy="170" r="4.5" fill="#fff"/><circle cx="241" cy="170" r="4.5" fill="#fff"/>
+	<ellipse cx="118" cy="206" rx="15" ry="9" fill="#f9a8d4" opacity=".7"/><ellipse cx="282" cy="206" rx="15" ry="9" fill="#f9a8d4" opacity=".7"/>
+	<path d="M174 212q26 26 52 0" fill="none" stroke="#0f172a" stroke-width="7" stroke-linecap="round"/>
+</svg>
