@@ -19,3 +19,35 @@ add_action( 'after_setup_theme', function () {
 add_action( 'wp_enqueue_scripts', function () {
 	wp_enqueue_style( 'codepath', get_stylesheet_uri(), array(), CODEPATH_VERSION );
 } );
+
+add_action( 'after_setup_theme', function () {
+	register_nav_menus( array(
+		'primary' => 'Основное меню (шапка)',
+		'footer'  => 'Меню в подвале',
+	) );
+} );
+
+add_action( 'wp_enqueue_scripts', function () {
+	wp_enqueue_script(
+		'codepath',
+		get_theme_file_uri( 'assets/site.js' ),
+		array(),
+		CODEPATH_VERSION,
+		array( 'strategy' => 'defer', 'in_footer' => true )
+	);
+} );
+
+// Меню по умолчанию, пока в админке не назначено своё.
+function codepath_menu_fallback() {
+	echo '<ul class="menu">'
+		. '<li><a href="' . esc_url( home_url( '/#benefits' ) ) . '">Преимущества</a></li>'
+		. '<li><a href="' . esc_url( home_url( '/#reviews' ) ) . '">Отзывы</a></li>'
+		. '</ul>';
+}
+
+// Фавикон по умолчанию, если в админке не задана иконка сайта.
+add_action( 'wp_head', function () {
+	if ( ! has_site_icon() ) {
+		echo '<link rel="icon" type="image/svg+xml" href="' . esc_url( get_theme_file_uri( 'assets/favicon.svg' ) ) . '">' . "\n";
+	}
+} );
