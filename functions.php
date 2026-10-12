@@ -9,6 +9,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 define( 'CODEPATH_VERSION', '1.0.0' );
 
+require_once get_theme_file_path( 'inc/customizer.php' );
+
 add_action( 'after_setup_theme', function () {
 	add_theme_support( 'title-tag' );
 	add_theme_support( 'post-thumbnails' );
