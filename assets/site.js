@@ -27,3 +27,26 @@
 		}
 	} );
 } )();
+
+// Баннер cookie: показываем, пока посетитель не нажал «Понятно».
+( function () {
+	var banner = document.getElementById( 'cookie-banner' );
+	if ( ! banner ) {
+		return;
+	}
+	var KEY = 'codepath_cookie_ok';
+	var seen = false;
+	try {
+		seen = localStorage.getItem( KEY ) === '1';
+	} catch ( e ) {}
+	if ( seen ) {
+		return;
+	}
+	banner.hidden = false;
+	banner.querySelector( 'button' ).addEventListener( 'click', function () {
+		banner.hidden = true;
+		try {
+			localStorage.setItem( KEY, '1' );
+		} catch ( e ) {}
+	} );
+} )();
